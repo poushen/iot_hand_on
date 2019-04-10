@@ -1,0 +1,9 @@
+# 安裝esptool
+
+pip3 install esptool
+
+# 燒錄MicroPython韌體
+
+esptool.py --port com4 erase_flash
+esptool.py --port com4 --baud 115200 write_flash --flash_size=4MB -fm dio 0 Downloads\esp8266-20190125-v1.10.bin
+
