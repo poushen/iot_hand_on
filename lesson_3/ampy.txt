@@ -1,0 +1,35 @@
+# 安裝ampy
+
+pip3 install adafruit-ampy
+
+# ampy使用說明
+
+ampy --help
+
+# 上傳程式到D1 Mini開發板上
+
+ampy --port com4 put blink.py
+ampy -p com4 put blink.py
+
+# 查看D1 Mini開發板上有那些檔案
+
+ampy --port com4 ls
+
+# could not enter raw repl的錯誤訊息
+# 請嘗試下 -d 0.5 參數解看解
+
+ampy -d 0.5 -p com4 -b 115200 ls
+
+# 執行電腦上的程式
+
+ampy --port com4 run blink.py
+ampy --port com4 run --no-output blink.py  # 不等待程式輸出結果, 不卡住
+
+# 取回板子上的程式
+
+ampy --port com4 get blink.py           # 只列出檔案內容
+ampy --port com4 get blink.py blink2.py # 取回檔案並存成指定檔名
+
+# 刪除板子上的程式
+
+ampy --port com4 rm blink.py
