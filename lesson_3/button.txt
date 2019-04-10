@@ -1,0 +1,80 @@
+# 按下點亮LED
+
+from machine import Pin
+
+led = Pin(2, Pin.OUT, value=1)
+sw = Pin(0, Pin.IN)  # D3 = GPIO0
+
+while True:
+    val = sw.value() # sw()
+    led.value(val)
+
+# 用開關(按鈕)來切換LED
+# 按一下開關，LED亮，再按一下，LED滅
+# 這個版本的程式，看似正確，實則有重大問題：「while迴圈快速地檢查開關是否被按下，當我們按下放開時，程式已經切換toggle好幾次。」
+
+from machine import Pin
+
+toggle = 1
+
+led = Pin(2, Pin.OUT, value=1)
+sw = Pin(0, Pin.IN)
+
+while True:
+    if sw.value() == 0:
+        toggle = not toggle
+        led.value(toggle)
+
+# 開關彈跳－軟體解法 1
+# 在開關被按著時，程式「放空」
+
+from machine import Pin
+
+toggle = 1
+
+led = Pin(2, Pin.OUT, value=1)
+sw = Pin(0, Pin.IN)
+
+while True:
+    if sw.value() == 0:
+        toggle = not toggle
+        led.value(toggle)
+        while sw.value() == 0:
+            pass
+
+# 開關彈跳－軟體解法 2
+# 在開關被按著時，程式「放空」
+# 略過彈跳期間(2 - 30 ms)的訊號變化 版本1
+
+from machine import Pin
+
+toggle = 1
+
+led = Pin(2, Pin.OUT, value=1)
+sw = Pin(0, Pin.IN)
+
+while True:
+    if sw.value() == 0:
+        time.sleep_ms(20)
+        led.value(not led.value())
+        while sw.value() == 0:
+            pass
+
+# 開關彈跳－軟體解法 3
+# 在開關被按著時，程式「放空」
+# 略過彈跳期間(2 - 30 ms)的訊號變化 版本2
+
+from machine import Pin
+
+toggle = 1
+
+led = Pin(2, Pin.OUT, value=1)
+sw = Pin(0, Pin.IN)
+
+while True:
+    if sw.value() == 0:
+        time.sleep_ms(20)
+        if sw.value() == 0:
+            led.value(not led.value())
+            while sw.value() == 0:
+                pass
