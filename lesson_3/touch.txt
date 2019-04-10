@@ -1,0 +1,13 @@
+# 觸摸開關(TTP224 4Key)
+# TTP232 2Key
+# 沒有bounce問題，沒有上下拉問題。
+
+from machine import Pin
+led = Pin(2, Pin.OUT, value=1)
+sw = Pin(5, Pin.IN)  # D1
+
+while True:
+    if sw.value() == 1:
+        led.value(not led.value())
+        while sw.value() == 1:
+            pass
