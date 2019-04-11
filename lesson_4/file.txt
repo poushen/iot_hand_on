@@ -1,0 +1,34 @@
+# 檔案系統操作
+
+# file_oper.py
+import os
+os.listdir()
+os.listdir('/mylib')
+os.getcwd()
+os.chdir('/mylib')
+os.getcwd()
+os.listdir()
+os.mkdir('test')
+os.listdir()
+os.rmdir('test')
+os.listdir()
+
+# file_read_write.py
+f = open('/test.txt', 'a')    # append mode
+f.write('hello\r\nworld\r\n')
+f.close()
+
+f = open('/test.txt', 'r')   # read only mode
+f.read()   # read whole file
+f.read()   # read not thing
+f.seek(5)  # move cursor
+f.read()
+
+f.seek(0)
+f.readline()   # read one line
+f.readline()
+f.readline()
+
+f.seek(0)
+f.readlines()  # read whole file, return list seperate by line
+f.close()
