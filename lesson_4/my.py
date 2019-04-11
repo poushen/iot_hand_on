@@ -47,10 +47,9 @@ def fileExists(path):
         
 def cp(src, dest):
     if fileExists(src):
-        with open(src, 'rb') as f_src:
-            with open(dest, 'wb') as f_dest:
-                while True:
-                    chunk = f_src.read(64)
-                    if len(chunk) == 0:
-                        break
-                    f_dest.write(chunk)
+        with open(src, 'rb') as f_src, open(dest, 'wb') as f_dest:
+            while True:
+                chunk = f_src.read(64)
+                if len(chunk) == 0:
+                    break
+                f_dest.write(chunk)
