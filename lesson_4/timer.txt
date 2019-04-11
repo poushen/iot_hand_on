@@ -1,0 +1,50 @@
+# Timer(定時器)
+
+# 使用定時器閃爍LED (blink_timer.py)
+from machine import Pin, Timer
+
+LED = Pin(2, Pin.OUT)
+
+def blink(t):
+    LED.value(not LED.value())
+
+tim = Timer(-1)
+tim.init(period=500, mode=Timer.PERIODIC, callback=blink)
+
+# 用try … except捕捉例外狀況 (blink_timer_try.py)
+from machine import Pin, Timer
+
+LED = Pin(2, Pin.OUT)
+
+def blink(t):
+    LED.value(not LED.value())
+
+tim = Timer(-1)
+tim.init(period=500, mode=Timer.PERIODIC, callback=blink)
+
+try:
+    while True:
+        pass
+except:
+    tim.deinit()
+    print('stopped!')
+	
+# 匿名函式(lambda)
+
+# 程式 (blink_timer_lambda.py)
+from machine import Pin, Timer
+
+LED = Pin(2, Pin.OUT)
+"""
+def blink(t):
+    LED.value(not LED.value())
+"""
+tim = Timer(-1)
+tim.init(period=500, mode=Timer.PERIODIC, callback=lambda t: LED.value(not LED.value()))
+
+try:
+    while True:
+        pass
+except:
+    tim.deinit()
+    print('stopped!')
