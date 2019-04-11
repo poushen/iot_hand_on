@@ -1,0 +1,33 @@
+# 程式 (irq.py)
+
+from machine import Pin
+
+led = Pin(2, Pin.OUT)
+sw = Pin(0, Pin.IN)
+
+def callback(p):
+    global led
+    led(not led())
+
+sw.irq(trigger=Pin.IRQ_FALLING, handler=callback)
+
+# 利用定時器略過彈跳期間 (irq_debounce.py)
+
+from machine import Pin, Timer
+
+led = Pin(2, Pin.OUT, value=1)
+sw = Pin(0, Pin.IN, Pin.PULL_UP)
+
+def toggle_led(t):
+    global led, sw
+    if sw.value() == 0:
+        led.value(not led.value())
+    sw.irq(trigger=Pin.IRQ_FALLING, handler=callback)
+
+def callback(p):
+    global sw
+    sw.irq(handler=None)
+    tim = Timer(-1)
+    tim.init(period=20, mode=Timer.ONE_SHOT, callback=toggle_led)
+    
+sw.irq(trigger=Pin.IRQ_FALLING, handler=callback)
