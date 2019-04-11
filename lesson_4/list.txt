@@ -1,0 +1,22 @@
+# list 操作 (list_oper.py)
+
+avengers = ['Iron Man', 'Thor', 'Hulk']
+avengers[1]
+avengers[-1]
+avengers += ['Spider-Man', 'Ant-Man']
+avengers
+avengers.pop()
+avengers
+avengers.insert(0, 'Ant-Man')
+avengers
+avengers.pop(0)
+avengers
+avengers.remove('Spider-Man')
+avengers
+del avengers[-1]
+avengers
+for hero in avengers:
+    print(hero)
+    
+for i,hero in enumerate(avengers):
+    print(i, hero)
