@@ -1,0 +1,49 @@
+# 自訂module (mini_blink.py)
+
+# MINI.py
+D0 = const(16)
+D1 = const(5)
+D2 = const(4)
+D3 = const(0)
+D4 = const(2)
+D5 = const(14)
+D6 = const(12)
+D7 = const(13)
+D8 = const(15)
+TX = const(1)
+RX = const(3)
+
+def hello():
+    print("hello")
+	
+# mini_blink.py
+from machine import Pin
+from time import sleep
+import MINI
+
+led = Pin(MINI.D4, Pin.OUT)
+
+while True:
+    led.on()
+    sleep(0.5)
+    led.off()
+    sleep(0.5)
+	
+# module存放目錄 (greet.py)
+# /mylib/foo.py
+def greet(user):
+	print(‘hello, ‘ + user)
+
+# greet.py
+import sys
+sys.path
+
+import mylib.foo
+mylib.foo.greet('world')
+
+import mylib.foo as foo
+foo.greet('short')
+
+sys.path.append('/mylib')
+import foo
+foo.greet('holla')
