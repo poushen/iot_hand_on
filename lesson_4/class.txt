@@ -1,0 +1,116 @@
+#  Class (類別)
+
+# -*- coding: utf-8 -*-
+
+"""
+   程式說明請參閱10-11頁
+"""
+
+class Servo:
+    total = 0
+    def __init__(self, pin):
+        self.pin = pin
+        Servo.total += 1
+        print('伺服馬達物件總數：' + str(Servo.total))
+        
+    def rotate(self, degree=90):
+        print('接在{}腳的馬達轉動到{}度。'.format(self.pin, degree))
+
+    def __del__(self):
+        Servo.total -= 1
+        print('刪除{}腳，剩餘{}個物件。'.format(self.pin, Servo.total))
+
+# 類別使用
+
+s1 = Servo(0)
+s1 = Servo(1)
+s1.rotate(50)
+del s1
+
+# 類別繼承 (servo.py, diy10_4.py)
+
+# servo.py
+from machine import PWM, Pin
+
+class Servo:
+    def __init__(self, pin, min=500, max=2400, range=180):
+        self.servo = PWM(Pin(pin), freq=50)
+        self.period = 20000
+        self.minDuty = self.__duty(min)
+        self.maxDuty = self.__duty(max)
+        self.unit = (self.maxDuty - self.minDuty)/range
+
+    def __duty(self, value):
+        return int(value/self.period * 1024)
+
+    def rotate(self, degree=90):
+        val = round(self.unit * degree) + self.minDuty
+        val = min(self.maxDuty, max(self.minDuty, val))
+        self.servo.duty(val)
+        
+# diy10_4.py
+# -*- coding: utf-8 -*-
+
+"""
+   程式說明請參閱10-22頁
+"""
+
+from machine import Timer
+import servo
+import random
+import time
+
+class Target(servo.Servo):
+    def __init__(self, pin, upTime=(3,6), downTime=(3,10)):
+        super().__init__(pin)
+        self.upTime = upTime
+        self.downTime = downTime
+        self.running = False
+        self.rotate(0)
+        self.state = 'down'
+        self.tim = Timer(-1)
+
+    def turn(self, t):
+        if self.state == 'down':
+            print('going up')
+            self.rotate(90)
+            time.sleep(0.15)
+            self.state = 'up'
+        else:
+            print('going down')
+            self.rotate(0)
+            time.sleep(0.15)
+            self.state = 'down'
+
+        t.deinit()
+        self.startTimer()
+
+    def startTimer(self):
+        if self.state == 'up':
+            r = random.randint(self.upTime[0], self.upTime[1]) * 1000
+        else:
+            r = random.randint(self.downTime[0], self.downTime[1]) * 1000
+
+        print("random time: " + str(r) + "ms")
+
+        if self.tim == None:
+            self.tim = Timer(-1)
+        self.tim.init(period=r, mode=Timer.ONE_SHOT, callback=self.turn)
+
+    def start(self):
+        if self.running:
+            return
+        else:
+            self.running = True
+            self.startTimer()
+
+    def stop(self):
+        if not self.running:
+            return
+        else:
+            self.running = False
+            self.tim.deinit()
+            self.tim = None
+            self.rotate(0)
+            self.state = 'down'
+            print('target stopped')
