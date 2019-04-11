@@ -1,0 +1,27 @@
+# 字典操作 (dic_oper.py)
+
+light = {"wall":"ON"}  # create dictionary
+light['table'] = 'OFF' # add new element
+light
+light.update({'magic':'ON'}) # merge dictionary
+light
+light.pop('table')   # remove element
+light
+light.keys()      # enumerate keys
+light.values()    # enumerate values
+
+if 'table' in light:  # check element exists
+    print(light['table'])
+
+light.get('wall')
+light.get('table')   # get dictionary element, no error
+
+if light.get('table') is None:
+    print('table not exist')
+    
+for val in light.values():  # get all values
+    print(val)
+    
+light.items()  # get key and value at the same time
+for key, val in light.items():
+    print("key:{}, value:{}".format(key, val))
