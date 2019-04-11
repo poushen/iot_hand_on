@@ -1,0 +1,50 @@
+# 自訂函式(function)
+
+from machine import Pin
+from time import sleep
+
+p2 = Pin(2, Pin.OUT)
+def blink():
+	for i in range(5):
+		p2(0)
+		sleep(0.5)
+		p2(1)
+		sleep(0.5)
+
+blink()
+blink()
+
+# 自訂函式的傳入參數和傳回值
+
+def cirArea(r):
+	area = 3.14159 * r * r
+	return area
+
+ans = cirArea(5)
+ans
+
+# 變數的有效範圍(scope)
+# 以下為錯誤示範
+
+total = 10
+def count():
+	total+=1
+	print(total)
+
+count()
+
+# 會出現以下錯誤訊息
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in count
+NameError: local variable referenced before assignment
+
+# 這個為正確寫法
+
+total = 10
+def count():
+	global total
+	total += 1
+	print(total)
+
+count()
