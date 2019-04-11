@@ -1,0 +1,18 @@
+# tuple 操作 (tuple_oper.py)
+
+p = "A0,TX,RX,D0,D1,D2"
+pins = p.split(',')      # string to list
+pins
+spec = 'ESP8266', '800MHz', 3.3, 16   # tuple
+data = list(spec)                     # tuple to list
+data
+spec
+pins_t = tuple(pins)       # list to tuple
+pins_t
+temp, humid = 20.3, 67     # multiple assign
+temp
+humid
+data = (temp, humid)       # tuple
+x, y = data                # multiple assign with tuple
+x
+y
