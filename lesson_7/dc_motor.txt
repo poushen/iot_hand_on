@@ -1,0 +1,12 @@
+# 調速程式(改變duty -> 改變電壓 -> 改變電流 -> 改變轉速)
+
+from machine import Pin, PWM
+
+motoPin = Pin(13, Pin.OUT)
+MOTOR = PWM(motorPin, 1000)
+
+MOTOR.duty(1023)
+MOTOR.duty(800)
+MOTOR.duty(700)
+
+MOTOR.duty(400)
