@@ -1,0 +1,18 @@
+# WebREPL啟用（只做一次）
+
+import webrepl_setup
+E
+你的密碼
+再打一次一樣的密碼
+y
+
+# WebREPL使用
+
+重開機後，終端機會出現：
+WebREPL daemon started on ws://192.168.4.1:8266
+使用Wi-Fi連線到板子
+ESP8266 AP SSID以MicroPython-開頭
+連線密碼是：micropythoN
+以Chrome或Firefox開啟webrepl.html
+這個網頁可由GitHub取得：https://github.com/micropython/webrepl
+或由書上範例取得
