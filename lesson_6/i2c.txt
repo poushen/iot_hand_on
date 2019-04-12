@@ -1,0 +1,120 @@
+# i2c_scan.py
+
+# Scanner i2c en MicroPython | MicroPython i2c scanner
+# Renvoi l'adresse en decimal et hexa de chaque device connecte sur le bus i2c
+# Return decimal and hexa adress of each i2c device
+# https://projetsdiy.fr - https://diyprojects.io (dec. 2017)
+
+import machine
+i2c = machine.I2C(scl=machine.Pin(5), sda=machine.Pin(4))
+
+print('Scan i2c bus...')
+devices = i2c.scan()
+
+if len(devices) == 0:
+  print("No i2c device !")
+else:
+  print('i2c devices found:',len(devices))
+
+  for device in devices:  
+    print("Decimal address: ",device," | Hexa address: ",hex(device))
+	
+# diy12_1_3.py
+
+from machine import Pin, I2C
+import time
+
+PCF8591 = 0x48
+CH0 = b'\x00'
+CH1 = b'\x01'
+CH2 = b'\x02'
+CH3 = b'\x03'
+
+i2c = I2C(scl=Pin(5), sda=Pin(4), freq=100000)
+
+while True:
+    r = i2c.writeto(PCF8591, CH0)
+    data0 = i2c.readfrom(PCF8591, 1)
+    data0 = i2c.readfrom(PCF8591, 1)
+    #print('THM: ' + str((data[0])))
+    
+    r = i2c.writeto(PCF8591, CH1)
+    data1 = i2c.readfrom(PCF8591, 1)
+    data1 = i2c.readfrom(PCF8591, 1)
+    #print('LDR: ' + str((data[0])))
+
+    r = i2c.writeto(PCF8591, CH2)
+    data2 = i2c.readfrom(PCF8591, 1)
+    data2 = i2c.readfrom(PCF8591, 1)
+    #print('POT: ' + str((data[0])))
+    
+    r = i2c.writeto(PCF8591, CH3)
+    data3 = i2c.readfrom(PCF8591, 1)
+    data3 = i2c.readfrom(PCF8591, 1)
+    
+    print('CH0:{:03}, CH1:{:03}, CH2:{:03}, CH3:{:03}'.format(data0[0], data1[0], data2[0], data3[0]))
+    time.sleep_ms(100)
+	
+# oled.py
+
+from machine import Pin, I2C
+import ssd1306
+i2c = I2C(scl=Pin(5), sda=Pin(4), freq=100000)
+oled = ssd1306.SSD1306_I2C(128, 64, i2c)
+oled.text(‘No Hack,’, 0, 0)
+oled.text(‘No Life!’, 50, 30)
+oled.show()
+
+# more oled command
+
+>>> oled.poweroff()
+>>> oled.poweron()
+>>> oled.invert(True)
+>>> oled.invert(False)
+>>> oled.fill(1)
+>>> oled.show()
+>>> oled.fill(0)
+>>> oled.show()
+>>> oled.pixel(10,10,1)
+>>> oled.show()
+>>> oled.scroll(10, 0)
+>>> oled.show()
+>>> oled.scroll(0, 10)
+>>> oled.show()
+>>> oled.line(0, 0, 60, 60, 1)
+>>> oled.show()
+>>> oled.rect(0, 0, 60, 60, 1)
+>>> oled.show()
+>>> oled.fill_rect(0, 0, 60, 60, 1)
+>>> oled.show()
+>>>
+
+# diy12_4.py   
+#
+#  @    @
+#
+import ssd1306
+import framebuf
+from machine import I2C, Pin
+
+i2c = I2C(scl=Pin(5), sda=Pin(4), freq=100000)
+oled = ssd1306.SSD1306_I2C(128, 64, i2c)
+
+img = [ 0x00, 0x32, 0x49, 0x79, 0x41, 0x3E, 0x00, 0x00 ]
+# img =[ 0x38, 0x44, 0x04, 0x34, 0x54, 0x54, 0x38, 0x00 ]
+buffer = bytearray(img)
+
+fb = framebuf.FrameBuffer(buffer, 8, 8, framebuf.MONO_VLSB)
+# fb = framebuf.FrameBuffer(buffer, 8, 8, framebuf.MONO_HLSB)
+oled.fill(0)
+oled.blit(fb, 30, 20)
+oled.blit(fb, 90, 20)
+
+oled.show()
+
+# bigSymbol.py
+先將bigSymbol.py傳至板子
+ampy --port comx put bigSymbol.py
+再跑'顯示虛擬温度.txt’裡的程式
+以上檔案放在範例程式/ch12
+bigSymbol.py同樣有版本問題，需修改
