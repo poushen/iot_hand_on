@@ -1,0 +1,36 @@
+# dht11.py
+
+from machine import Pin
+import dht
+import time
+
+d = dht.DHT11(Pin(2))
+
+while True:
+    d.measure()
+    temp = d.temperature()
+    hum = d.humidity()
+    print('Humidity: {:02}%'.format(hum))
+    print('Temperature: {:02}{}C'.format(temp, '\u00b0'))
+    time.sleep(5)
+	
+# ds18b20.py
+
+from machine import Pin
+import onewire
+import time, ds18x20
+
+ow = onewire.OneWire(Pin(12)) # create a OneWire bus on GPIO12
+ds = ds18x20.DS18X20(ow)      # create the onewire object
+roms = ds.scan()              # scan for devices on the bus
+print('found devices:', roms)
+
+# loop 10 times and print all temperatures
+for i in range(10):
+    print('temperatures:', end=' ')
+    ds.convert_temp()
+    time.sleep_ms(750)
+    for rom in roms:
+        print(ds.read_temp(rom), end=' ')
+    print()
+	
