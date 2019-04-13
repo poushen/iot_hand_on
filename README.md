@@ -26,12 +26,23 @@ ampy.txt  AMPY工具的使用示範
 button.txt  按鈕開關的程式
 signal.txt  轉換訊號意義on -> off
 touch.txt  觸控開關示範程式
-
 ```
 
 ### lesson_4
 
 MicroPython語言基礎練習
+```
+function.txt  自訂函数
+module.txt  自訂模組
+list.txt  串列操作
+tuple.txt  元組操作
+dictionary.txt  字典操作
+timer.txt  定時器操作
+interrupt.txt  中斷操作
+class.txt  類別操作
+file.txt  檔案操作
+my.py  自訂小工具
+```
 
 ### lesson_5
 
