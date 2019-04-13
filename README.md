@@ -7,7 +7,9 @@
 電腦環境設置與D1 Mini開發板韌體安裝
 
 setup.txt  第一次做的程序
+
 redo.txt  已做完燒錄MicroPyth韌體，重開機後做的程序
+
 blink.py  閃爍LED的程式
 
 ### lesson_2
