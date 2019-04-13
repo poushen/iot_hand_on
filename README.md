@@ -107,5 +107,8 @@ micropython-mfrc522.txt  MFRC522讀卡機晶片驅動程式網址
 read_beep.py  讀卡片UID及區塊#8, 成功時發出beep聲
 read_beep2.py  讀卡片UID及區塊#8, 成功時發出beep聲，整理程式寫法
 write_keyb.py  以出廠預設金鑰(FF:FF:FF:FF:FF:FF)改寫區段#2的金鑰B為(B0:B1:B2:B3:B4:B5)
+write_data_using_keyb.py  以金鑰B寫入資料(00:01:...:0F)至區塊#8
+write_default_data.py  將區塊#8內容寫成（00:00...:00)
+weite_default_key.py  將區段#2的金鑰B改回出廠預設金鑰(FF:FF:FF:FF:FF:FF)
 ```
 
