@@ -18,7 +18,7 @@ def connectAP(ssid, pwd):
     return wlan.ifconfig()[0]
 
 # connect to your AP, change SSID, password
-ip = connectAP('management', '12345678')
+ip = connectAP('your SSID', 'your password')
 
 import webrepl
 webrepl.start()
