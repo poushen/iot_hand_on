@@ -74,10 +74,29 @@ adxl345_spi_test.py 讀取ADXL345加速度計值的示範程式
 ### lesson_7
 
 PWM (pulse width modulation)
+```
+diy8_2.py  LED呼吸燈
+diy9_1.py  救護車音效
+diy9_3.py  音樂
+background_play.py  不卡住播音樂
+rotate_fun.py  伺服馬逹(Servo)轉動
+servo.py  伺服馬逹驅動（封裝成類別）
+dc_motor.txt  直流馬逹調速
+```
 
 ### lesson_8
 
 Analog Input
-
+```
+potentiometer.py  電位計
+cds_night_light1.py  光敏電阻小夜燈1
+cds_might_light2.py  光敏電阻小夜燈2
+target.py  雷射槍玩具標靶
+adxl335_x.py  讀取ADXL335加速度計單一軸的值
+adxl335_xy_pcf8591.py  讀取ADXL335加速度計兩軸的值
+motion_control_dc_motor.py  體感控制伺服馬逹
+ads1x15-master  TI ADS1x15的驅動程式
+ads1115_test2.py  ADS1115接TMP36
+```
 
 
