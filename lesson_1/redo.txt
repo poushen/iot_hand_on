@@ -1,0 +1,31 @@
+# 下載python
+
+python.org
+
+# 安裝python
+
+要勾選加入環境變數
+
+# 驗證python
+
+python -V
+
+# 安裝CH340G驅動
+
+http://www.wch.cn/download/CH341SER_EXE.html
+
+# 驗證CH340G
+
+連接D1 Mini開發板和電腦
+打開電腦管理員->裝置管理員->COM&LPT
+查看是否出現CH340G(COMx), 記住是COM多少
+
+# 使用Putty連上D1 Mini開發板的MicroPython環境
+
+選Serial
+改COM
+speed設為115200
+
+連上後若看不到訊息，按兩下Enter
+出現>>>
+可以正常輸入就成功了
