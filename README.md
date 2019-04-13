@@ -99,4 +99,13 @@ ads1x15-master  TI ADS1x15的驅動程式
 ads1115_test2.py  ADS1115接TMP36
 ```
 
+### lesson_9
+
+RFID
+```
+micropython-mfrc522.txt  MFRC522讀卡機晶片驅動程式網址
+read_beep.py  讀卡片UID及區塊#8, 成功時發出beep聲
+read_beep2.py  讀卡片UID及區塊#8, 成功時發出beep聲，整理程式寫法
+write_keyb.py  以出廠預設金鑰(FF:FF:FF:FF:FF:FF)改寫區段#2的金鑰B為(B0:B1:B2:B3:B4:B5)
+```
 
