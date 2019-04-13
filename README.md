@@ -47,6 +47,11 @@ my.py  自訂小工具
 ### lesson_5
 
 D1 Mini Wifi使用與WEBREPL
+```
+webrepl.txt  WEBREPL啓用與使用
+boot.py  開機自動執行程式，在此放置連AP基地台的設定
+bytes.txt  資料型態bytes, bytearray的介紹，以及取得MAC位址的方法
+```
 
 ### lesson_6
 
