@@ -14,10 +14,20 @@ blink.py  閃爍LED的程式
 ### lesson_2
 
 外加LED
+```
+blink2.py  閃爍外接LED的程式, 接D5
+```
 
 ### lesson_3
 
 AMPY工具程式的使用與按鈕開關
+```
+ampy.txt  AMPY工具的使用示範
+button.txt  按鈕開關的程式
+signal.txt  轉換訊號意義on -> off
+touch.txt  觸控開關示範程式
+
+```
 
 ### lesson_4
 
