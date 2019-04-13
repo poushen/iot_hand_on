@@ -56,6 +56,20 @@ bytes.txt  資料型態bytes, bytearray的介紹，以及取得MAC位址的方�
 ### lesson_6
 
 Serial interface (oneWire, UART, I2C, SPI)
+```
+one_wire.txt  單線通訊(dht11.py, ds18b20.py)
+uart.txt  TXRX通訊(gps_test.py, test.py)
+i2c.txt  I2C通訊(i2c_scan.py, diy12_1_3.py, oled.py, diy12_4.py)
+bigSymbol.py  課本大字體程式
+tmp102Class.py  TMP102驅動程式
+tmp102_49.py  使用I2C位址0x49, 在OLED上顯示温度
+max7219.py  MAX7219 LED點陣示範程式
+spaceInvader.py  MAX7219顯示動畫
+sdcard.py  SD卡模組
+sdtest.py  在SD卡上讀寫資料的示範程式
+adxl345_spi.py  ADXL345加速度計的驅動程式
+adxl345_spi_test.py 讀取ADXL345加速度計值的示範程式
+```
 
 ### lesson_7
 
