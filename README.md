@@ -112,3 +112,11 @@ write_default_data.py  將區塊#8內容寫成（00:00...:00)
 weite_default_key.py  將區段#2的金鑰B改回出廠預設金鑰(FF:FF:FF:FF:FF:FF)
 ```
 
+### lesson_11
+
+Networking Basic
+```
+diy16_1  課本原本websocket示範程式 (client.py,server.py)
+diy16_1_fix 同上，但修正一些小問題
+```
+
