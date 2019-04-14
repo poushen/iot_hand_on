@@ -7,7 +7,7 @@
 from machine import Pin, PWM
 import time
 
-buzzer = PWM(Pin(14))
+buzzer = PWM(Pin(13))
 
 pitches = {
     'C5':523,

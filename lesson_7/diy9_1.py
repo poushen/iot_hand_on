@@ -7,7 +7,7 @@
 from machine import Pin, PWM
 import time
 
-buzzer = PWM(Pin(14, Pin.OUT), duty=900)
+buzzer = PWM(Pin(13, Pin.OUT), duty=10)
 
 def sndEffect(): 
     buzzer.freq(400)
