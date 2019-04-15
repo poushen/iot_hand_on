@@ -6,6 +6,7 @@
 
 趙英傑, 超圖解Python物聯網實作入門, 旗標出版, 2018
 ```
+https://swf.com.tw/?p=1129&fbclid=IwAR2Q0mU-z5KyP24LSUPYUlbB1Y1mwuI2pgoQH1HjX5JWm19o2rTcchT9Kwo
 範例：http://www.flag.com.tw/DL.asp?FT797
 ```
 
@@ -123,7 +124,32 @@ weite_default_key.py  將區段#2的金鑰B改回出廠預設金鑰(FF:FF:FF:FF:
 
 Networking Basic
 ```
-diy16_1  課本原本websocket示範程式 (client.py,server.py)
+diy16_1  課本原本socket示範程式 (client.py, server.py)
 diy16_1_fix 同上，但修正一些小問題
+server_led.py  用socket來開關LED
+diy16_2.py  讀取網頁的用戶端程式
+diy16_2_1.py  同上, 但加上檢查是否已連網的檢查
+https.py  讀取網頁的測試程式, 但使用https協定(而不是如diy16_2.py那樣使用http協定)
+http_basic_ifttt.py  觸發IFTTT應用(Applet)Webhooks
 ```
 
+### lesson_12
+
+ESP8266 as Web Server and IoT Cloud(ThingSpeak)
+```
+diy17_1.py  只回應固定訊息的web server
+diy17_2.py  動態回應當前温溼度的web server
+diy17_2_fix.py  同上, 但修正一些小問題
+
+可讀取網頁和圖檔的小型Web Server
+http_file.py  網頁伺服器
+www目錄  
+  favicon.ico  圖示檔
+  index.html  首頁
+  img目錄
+    python.png  影像檔
+	
+diy17_4_1.py  使用request物件(get方法)上傳資料至ThingSpeak
+diy17_4_3.py  使用request物件(get方法)固定每20秒上傳DHT11温溼度資料至ThingSpeak
+POST.py  使用request物件(post方法)上傳資料至ThingSpeak
+```
