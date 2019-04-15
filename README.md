@@ -172,6 +172,8 @@ openweather.py  在OLED螢幕上顯示天氣資料
 diy18_3.py  發佈資料到ThingSpeak MQTT
 diy18_4.py  訂閱ThingSpeak MQTT訊息
 diy18_4_led.py  利用MQTT(遠端)控制LED開關
+lcd-image_converter.txt  LCD Image Converter's homepage and download link
+lcdassistant.txt  LCD Assistant's homepage and download link
 ```
 
 ### lesson_14
