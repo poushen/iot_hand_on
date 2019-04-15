@@ -173,3 +173,12 @@ diy18_3.py  發佈資料到ThingSpeak MQTT
 diy18_4.py  訂閱ThingSpeak MQTT訊息
 diy18_4_led.py  利用MQTT(遠端)控制LED開關
 ```
+
+### lesson_14
+
+dweet.io & Google Assistant
+```
+dweet_put.py  發布資料至dweet.io範例程式
+dweet_get.py  讀取最新一筆dweet.io資料
+diy18_4_aio.py  訂閱AIO MQTT訊息, 以便Google Assistant語音控制LED開關
+```
