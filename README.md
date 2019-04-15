@@ -160,3 +160,16 @@ diy17_4_1.py  使用request物件(get方法)上傳資料至ThingSpeak
 diy17_4_3.py  使用request物件(get方法)固定每20秒上傳DHT11温溼度資料至ThingSpeak
 POST.py  使用request物件(post方法)上傳資料至ThingSpeak
 ```
+
+### lesson_13
+
+JSON & MQTT
+```
+處理JSON.txt  示範JSON <-> Dictonary
+diy18_1.py  由openweathermap網站讀取及解析天氣資料 範例程式
+icons目錄  天氣圖示的影像檔
+openweather.py  在OLED螢幕上顯示天氣資料
+diy18_3.py  發佈資料到ThingSpeak MQTT
+diy18_4.py  訂閱ThingSpeak MQTT訊息
+diy18_4_led.py  利用MQTT(遠端)控制LED開關
+```
