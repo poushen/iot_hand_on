@@ -189,7 +189,7 @@ diy18_4_aio.py  訂閱AIO MQTT訊息, 以便Google Assistant語音控制LED開�
 
 Adafruit IO
 ```
-diy18_4_aio.py  訂閱AIO MQTT訊息, 以便Google Assistant語音控制LED開關
+diy18_4_aio.py  訂閱AIO MQTT訊息, 由讀到的AIO feed的資料值來決定LED開或關
 diy18_3_aio.py  由D1 Mini發佈資料以新增至AIO Feed
 switch_aio_led.py  由D1 Mini按鈕觸發發佈資料至AIO
 subscribe_aio_led.py  訂閱AIO訊息以決定開關LED
