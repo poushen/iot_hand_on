@@ -1,0 +1,5 @@
+LCD Assistant is a free tool for converting monochromatic bitmaps to data arrays for easy use with programs for embedded systems with microcontrollers and graphics monochromatic LCD displays like a T6963C, KS0108, SED1335 etc.
+
+Homepage: http://en.radzio.dxp.pl/bitmap_converter/
+Download: en.radzio.dxp.pl/bitmap_converter/LCDAssistant.zip
+

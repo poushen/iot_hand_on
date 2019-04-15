@@ -1,0 +1,7 @@
+This application allows you to create bitmaps and fonts, and transform them to “C” source format for embedded applications. 
+
+Honepage: https://www.riuson.com/lcd-image-converter
+Download: https://downloads.riuson.com/lcd-image-converter
+
+GitHub: https://github.com/riuson/lcd-image-converter
+
