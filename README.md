@@ -2,7 +2,7 @@
 
 ## 元培企管系物聯網實作課程  習作提要
 
-### lesson_1
+### lesson_01
 	
 電腦環境設置與D1 Mini開發板韌體安裝
 ```
@@ -11,14 +11,14 @@ redo.txt  已做完燒錄MicroPyth韌體，重開機後做的程序
 blink.py  閃爍LED的程式
 ```
 
-### lesson_2
+### lesson_02
 
 外加LED
 ```
 blink2.py  閃爍外接LED的程式, 接D5
 ```
 
-### lesson_3
+### lesson_03
 
 AMPY工具程式的使用與按鈕開關
 ```
@@ -28,7 +28,7 @@ signal.txt  轉換訊號意義on -> off
 touch.txt  觸控開關示範程式
 ```
 
-### lesson_4
+### lesson_04
 
 MicroPython語言基礎練習
 ```
@@ -44,7 +44,7 @@ file.txt  檔案操作
 my.py  自訂小工具
 ```
 
-### lesson_5
+### lesson_05
 
 D1 Mini Wifi使用與WEBREPL
 ```
@@ -53,7 +53,7 @@ boot.py  開機自動執行程式，在此放置連AP基地台的設定
 bytes.txt  資料型態bytes, bytearray的介紹，以及取得MAC位址的方法
 ```
 
-### lesson_6
+### lesson_06
 
 Serial interface (oneWire, UART, I2C, SPI)
 ```
@@ -71,7 +71,7 @@ adxl345_spi.py  ADXL345加速度計的驅動程式
 adxl345_spi_test.py 讀取ADXL345加速度計值的示範程式
 ```
 
-### lesson_7
+### lesson_07
 
 PWM (pulse width modulation)
 ```
@@ -84,7 +84,7 @@ servo.py  伺服馬逹驅動（封裝成類別）
 dc_motor.txt  直流馬逹調速
 ```
 
-### lesson_8
+### lesson_08
 
 Analog Input
 ```
@@ -99,7 +99,7 @@ ads1x15-master  TI ADS1x15的驅動程式
 ads1115_test2.py  ADS1115接TMP36
 ```
 
-### lesson_9
+### lesson_09
 
 RFID
 ```
