@@ -153,7 +153,7 @@ www目錄
 diy17_5目錄
   webroot目錄
     favicon.ico  圖示檔
-	index.html  首頁檔
+    index.html  首頁檔
   http_query.py 網頁伺服器
 	
 diy17_4_1.py  使用request物件(get方法)上傳資料至ThingSpeak
