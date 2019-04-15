@@ -184,3 +184,14 @@ dweet_put.py  發布資料至dweet.io範例程式
 dweet_get.py  讀取最新一筆dweet.io資料
 diy18_4_aio.py  訂閱AIO MQTT訊息, 以便Google Assistant語音控制LED開關
 ```
+
+### lesson_15
+
+Adafruit IO
+```
+diy18_4_aio.py  訂閱AIO MQTT訊息, 以便Google Assistant語音控制LED開關
+diy18_3_aio.py  由D1 Mini發佈資料以新增至AIO Feed
+switch_aio_led.py  由D1 Mini按鈕觸發發佈資料至AIO
+subscribe_aio_led.py  訂閱AIO訊息以決定開關LED
+publish_dht11_aio.py  發佈DHT11的温溼度資料至AIO
+```
