@@ -83,6 +83,8 @@ kx022_spi_test.py  讀取KX022加速度計值的示範程式
   D5 P00  CLK
   D6 P01  DI (MISO)
   D7 P02  DO (MOSI)
+kx022_spi_test2.py  算出傾角角度
+kx022_spi_test3.py  以傾角角度來轉動伺服馬達(Servo 接5V，訊號線接D3)
 ```
 
 ### lesson_07
