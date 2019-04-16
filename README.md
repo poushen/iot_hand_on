@@ -77,6 +77,12 @@ sdcard.py  SD卡模組
 sdtest.py  在SD卡上讀寫資料的示範程式
 adxl345_spi.py  ADXL345加速度計的驅動程式
 adxl345_spi_test.py 讀取ADXL345加速度計值的示範程式
+kx022_spi.py  KX022加速度計的驅動程式
+kx022_spi_test.py  讀取KX022加速度計值的示範程式
+  D0 P10  CS (課本原使用D8, 但D8=GPIO15在開機時需為低電位,若接CS會造成無法開機)
+  D5 P00  CLK
+  D6 P01  DI (MISO)
+  D7 P02  DO (MOSI)
 ```
 
 ### lesson_07
