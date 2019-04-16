@@ -178,6 +178,8 @@ openweather.py  在OLED螢幕上顯示天氣資料
 diy18_3.py  發佈資料到ThingSpeak MQTT
 diy18_4.py  訂閱ThingSpeak MQTT訊息
 diy18_4_led.py  利用MQTT(遠端)控制LED開關
+lcd-image_converter.txt  LCD Image Converter's homepage and download link
+lcdassistant.txt  LCD Assistant's homepage and download link
 ```
 
 ### lesson_14
@@ -187,4 +189,15 @@ dweet.io & Google Assistant
 dweet_put.py  發布資料至dweet.io範例程式
 dweet_get.py  讀取最新一筆dweet.io資料
 diy18_4_aio.py  訂閱AIO MQTT訊息, 以便Google Assistant語音控制LED開關
+```
+
+### lesson_15
+
+Adafruit IO
+```
+diy18_4_aio.py  訂閱AIO MQTT訊息, 由讀到的AIO feed的資料值來決定LED開或關
+diy18_3_aio.py  由D1 Mini發佈資料以新增至AIO Feed
+switch_aio_led.py  由D1 Mini按鈕觸發發佈資料至AIO
+subscribe_aio_led.py  訂閱AIO訊息以決定開關LED
+publish_dht11_aio.py  發佈DHT11的温溼度資料至AIO
 ```
