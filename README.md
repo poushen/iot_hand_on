@@ -113,6 +113,7 @@ adxl335_xy_pcf8591.py  讀取ADXL335加速度計兩軸的值
 motion_control_dc_motor.py  體感控制伺服馬逹
 ads1x15-master  TI ADS1x15的驅動程式
 ads1115_test2.py  ADS1115接TMP36
+ads1115_adxl337.py  ADS1115接ADXL337 或 ADXL335
 ```
 
 ### lesson_09
