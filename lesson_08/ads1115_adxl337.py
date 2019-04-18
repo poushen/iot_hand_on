@@ -17,7 +17,7 @@ def main():
         vx = ads.raw_to_v(ads.read(channel1=0))
         vy = ads.raw_to_v(ads.read(channel1=1))
         vz = ads.raw_to_v(ads.read(channel1=2))
-        print('x:{:.4f}g \t y:{:.4f}g \t z:{:.4f}g'.format(GValue(vx), GValue(vy), GValue(vz)))
+        print('x:{:.4f}g \t y:{:.4f}g \t z:{:.4f}g'.format(GValue(vx) - 0.08, GValue(vy) + 0.06, GValue(vz) - 0.15))
         sleep_ms(100)
 
 try:
