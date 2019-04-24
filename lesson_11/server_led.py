@@ -27,7 +27,7 @@ except:
 print('用戶端位址：{}，埠號：{}'.format(addr[0], addr[1]))
 
 while True:
-    msg = client.recv(100).decode('utf8')
+    msg = client.recv(100).decode('utf8').strip()
     print ('收到訊息：' + msg)
     reply = ''
 
