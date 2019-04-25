@@ -16,4 +16,4 @@ r1 = r2 * (vcc / vout - 1)
 
 print('R1 = {:.2f} ohm'.format(r1))
 print('Vout = {:.2f} V'.format(vout))
-print('I = {:.4f} A'.format(I))
+print('I = {:.4f} mA'.format(I * 1000))
