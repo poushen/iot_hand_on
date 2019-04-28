@@ -26,9 +26,10 @@ rate = 1 / 64  # unit: g
 
 while True:
     kx.getOutput(readings)
-    x = readings[0] * rate
-    y = readings[1] * rate
-    z = readings[2] * rate
+    for i,a in enumerate(readings):
+        readings[i] = a * rate
+    x, y, z = readings
+
     r = math.atan2(x, y)
     d = r * 180 / 3.14159
     print('x={:.2f}, \t\t y={:.2f}, \t\t z={:.2f}, \t\t d={:.1f}'.format(x,y,z, d))
