@@ -66,6 +66,9 @@ bytes.txt  資料型態bytes, bytearray的介紹，以及取得MAC位址的方�
 Serial interface (oneWire, UART, I2C, SPI)
 ```
 one_wire.txt  單線通訊(dht11.py, ds18b20.py)
+am2320_onewire_test.py  AM2320 ONEWIRE sample code (build-in driver)
+am2320.py  AM2320 I2C driver
+am2320_test.py  AM2320 I2C sample code
 uart.txt  TXRX通訊(gps_test.py, test.py)
 i2c.txt  I2C通訊(i2c_scan.py, diy12_1_3.py, oled.py, diy12_4.py)
 bigSymbol.py  課本大字體程式
