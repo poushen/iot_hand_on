@@ -17,8 +17,8 @@ d = am2320.AM2320(i2c)
 
 config = {
     'broker':'io.adafruit.com',
-    'user':'poushen',
-    'key':'68c3991e7a7a49b6bba4a83ca8110aff',
+    'user':'你的帳號',
+    'key':'你的AIO KEY',
     'id' : 'room/' + ubinascii.hexlify(machine.unique_id()).decode(),
     'topic_temp' : b'poushen/feeds/temperature',
     'topic_humi' : b'poushen/feeds/humidity'
