@@ -207,4 +207,5 @@ diy18_3_aio.py  由D1 Mini發佈資料以新增至AIO Feed
 switch_aio_led.py  由D1 Mini按鈕觸發發佈資料至AIO
 subscribe_aio_led.py  訂閱AIO訊息以決定開關LED
 publish_dht11_aio.py  發佈DHT11的温溼度資料至AIO
+publish_am2320_aio.py  發佈AM2320的温溼度資料至AIO
 ```
