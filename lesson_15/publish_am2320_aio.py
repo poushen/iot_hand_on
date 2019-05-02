@@ -7,7 +7,7 @@
 
 import machine
 import ubinascii
-import time
+import time, gc
 import am2320
 from machine import I2C, Pin
 from umqtt.simple import MQTTClient
@@ -34,6 +34,7 @@ def publish(topic, data):
     client.publish(topic, data.encode())
     time.sleep(1)
     client.disconnect()
+    del client
     
 def main():
     while True:
@@ -43,6 +44,8 @@ def main():
         time.sleep(1)
         data = '{}'.format(d.humidity())
         publish(config['topic_humi'], data)
+        gc.collect()
+        print('Free RAM after GC:', gc.mem_free())
         time.sleep(8)
         
 try:
