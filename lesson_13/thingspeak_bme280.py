@@ -17,10 +17,10 @@ bme = bme280.BME280(i2c=i2c)
 
 config = {
     'broker':'mqtt.thingspeak.com',
-    'user':'poushen',
-    'key':'VA1MVSS7OPK2HABF',
+    'user':'你的帳號',
+    'key':'MQTT KEY',
     'id' : 'room/' + ubinascii.hexlify(machine.unique_id()).decode(),
-    'topic' : b'channels/735455/publish/8FDV8A8LXEQ12L3E'
+    'topic' : b'channels/通道id/publish/你的寫入API KEY'
 }
 
 def sendData():
