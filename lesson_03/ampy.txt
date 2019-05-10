@@ -16,7 +16,7 @@ ampy -p com4 put blink.py
 ampy --port com4 ls
 
 # could not enter raw repl的錯誤訊息
-# 請嘗試下 -d 0.5 參數解看解
+# 請嘗試下 -d 0.5 參數解看看
 
 ampy -d 0.5 -p com4 -b 115200 ls
 
