@@ -23,7 +23,7 @@ class Servo:
 # 類別使用
 
 s1 = Servo(0)
-s1 = Servo(1)
+s2 = Servo(1)
 s1.rotate(50)
 del s1
 
