@@ -1,0 +1,19 @@
+import ntptime
+import utime
+import machine
+
+ntpOk = False
+while not ntpOk:
+    try:
+        ntptime.time()  # 可能timeout, 所以包在迴圈內, 一直嘗試直到成功為止
+        ntpOk = True
+    except:
+        ntpOk = False
+ntptime.settime()     # 以NTP對系統時間，RTC時間校時
+rtc = machine.RTC()
+temptime = utime.time() + 8*60*60  # 由UTC改為CST，即+8小時
+rtc.datetime(utime.localtime(temptime)[0:3] + (0,) + utime.localtime(temptime)[3:6] + (0,))
+
+# 顯示目前時間
+utime.localtime()
+rtc.datetime()
