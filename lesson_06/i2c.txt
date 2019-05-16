@@ -61,8 +61,8 @@ from machine import Pin, I2C
 import ssd1306
 i2c = I2C(scl=Pin(5), sda=Pin(4), freq=100000)
 oled = ssd1306.SSD1306_I2C(128, 64, i2c)
-oled.text(‘No Hack,’, 0, 0)
-oled.text(‘No Life!’, 50, 30)
+oled.text('No Hack,', 0, 0)
+oled.text('No Life!', 50, 30)
 oled.show()
 
 # more oled command
