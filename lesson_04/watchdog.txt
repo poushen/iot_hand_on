@@ -1,0 +1,29 @@
+# -----------------------------------------
+# Demo of Watchdog in action (讓看門狗咬你)
+# -----------------------------------------
+import machine
+machine.disable_irq()
+
+# [can't type anything here]
+# after some time:
+
+
+import machine
+machine.reset_cause()
+machine.reset_cause() == machine.WDT_RESET
+
+# -----------------------------------------
+# 取消看門狗
+# -----------------------------------------
+machine.WDT().deinit()
+machine.disable_irq()
+
+# [hangs forever]
+
+# -----------------------------------------
+# 自己餵看門狗
+# -----------------------------------------
+w = machine.WDT()
+w.feed()
+
+# now wait for about 3 seconds for reset
