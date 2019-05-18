@@ -6,7 +6,7 @@
 
 from machine import Pin,Timer,PWM
 
-ledPin = Pin(13, Pin.OUT)
+ledPin = Pin(13, Pin.OUT)  # D7
 LED = PWM(ledPin,1000)
 step = 32
 _duty = 0
