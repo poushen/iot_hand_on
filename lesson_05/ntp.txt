@@ -16,4 +16,4 @@ rtc.datetime(utime.localtime(temptime)[0:3] + (0,) + utime.localtime(temptime)[3
 
 # 顯示目前時間
 utime.localtime()
-rtc.datetime()
+rtc.datetime()  # (year, month, day, weekday, hours, minutes, seconds, subseconds)
