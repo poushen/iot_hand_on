@@ -153,3 +153,27 @@ while True:
     dsp.text('{:.2f}%'.format(sensor.humidity()), 34, 38)   
     oled.show()
     sleep(4)
+
+# 時鐘
+import time
+import utime
+import bigSymbol
+from machine import Pin, I2C
+import ssd1306
+
+i2c = I2C(scl=Pin(5), sda=Pin(4), freq=100000)
+oled = ssd1306.SSD1306_I2C(128, 64, i2c)
+dsp = bigSymbol.Symbol(oled)
+
+n = 0
+dsp.clear()
+while True:
+    h = utime.localtime()[3]
+    m = utime.localtime()[4]
+    s = utime.localtime()[5]
+    t = '{0:02d}.{1:02d}'.format(h, m)
+    dsp.text(t, 30, 18)
+    if s==0 or n==0:
+        oled.show()
+    n += 1
+    time.sleep(1)
