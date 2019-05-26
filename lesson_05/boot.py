@@ -19,8 +19,6 @@ def connectAP(ssid, pwd):
 
 # connect to your AP, change SSID, password
 #ip = connectAP('your SSID', 'your password')
-#ip = connectAP('XperiaZ5C', '12345678')
-ip = connectAP('dlink412', '50c306693376574')
 
 import webrepl
 webrepl.start()
