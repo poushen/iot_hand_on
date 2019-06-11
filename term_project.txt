@@ -1,0 +1,58 @@
+# --------------------------------------
+# The smart clock and alarm
+# --------------------------------------
+
+1. make your ESP8266 connect to wifi (lesson 5)
+  modify boot.py
+  
+2. calibrate your RTC using NTP (lesson 5)
+  ntp.txt
+  
+3. show Hour:Minute to OLED (lesson 6)
+  i2c.txt (the last sample code)
+  
+4. add Second display on OLED (do it yourself)
+  reference i2c.txt (lesson 6)
+  then you get the score of 70
+  
+# --------------------------------------
+5. add alarm function, including
+  5.1 set alarm time, must using MQTT (by IOT cloud)
+    (lesson 15, using Adafruit IO)
+    subscribe_aio_led.py
+    
+  5.2 when alarm time up, make some noise (using speaker)
+    (lesson 7)
+    background_play.py
+    
+  5.3 add Alarm cancel function:
+    5.3.1 Timeout
+      timeout after 1 minute
+    5.3.2 Button
+      when alarming, stop it by press button
+    
+  5.3 teacher's demo
+    clock.py show how to add Second display (4)
+    clock_alarm.py show how to add alarm setting (using Adafruit IO MQTT subscribe) and using LED to alarm
+    clock_alarm2.py using Timer to refresh OLED, this make the display more precise
+    clock_alarm3.py add button to cancel alarm
+    clock_alarm4.py (and music.py) add speaker music for alarm
+    
+    now, after complete above, you get score 90
+    
+# ------------------------------------------
+6. add weather report function
+  (lesson 13)
+  openweather.py
+  when not alarm, pressing button will show you the weather report
+  if you do this, you get score 95
+  
+  6.1 teacher's demo
+    clock_alarm5.py (and weather.py) show you a way to do this
+    ntp.py (and clock_alarm5.py) show you how to calibrate RTC at a periodical time
+    
+# --------------------------------------------
+
+7. note 
+  subscribe to adafruit io is not stable enough! 
+  
