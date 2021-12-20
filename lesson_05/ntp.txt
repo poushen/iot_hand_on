@@ -15,5 +15,5 @@ temptime = utime.time() + 8*60*60  # 由UTC改為CST，即+8小時
 rtc.datetime(utime.localtime(temptime)[0:3] + (0,) + utime.localtime(temptime)[3:6] + (0,))
 
 # 顯示目前時間
-utime.localtime()
-rtc.datetime()
+utime.localtime() # (year, month, mday, hour, minute, second, weekday, yearday)
+rtc.datetime()  # (year, month, day, weekday, hours, minutes, seconds, subseconds)
