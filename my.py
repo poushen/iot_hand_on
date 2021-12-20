@@ -17,18 +17,16 @@ def run(f):
         exec(str, globals())
 
 def ls(prex=None):
-    #s = os.statvfs(os.getcwd())
-    #print("current directory: {}, available size: {}KB".format(os.getcwd(), s[0] * s[4] / 1024))
-    #print("current directory: {}".format(os.getcwd()))
+    # s = os.statvfs(os.getcwd())
+    # print("current directory: {}, available size: {}KB".format(os.getcwd(), s[0] * s[4] / 1024))
     print()
     for (name, type, inode) in sorted(os.ilistdir()):
         if prex == None or name.startswith(prex):
+            s = os.stat(name)
+            size = s[6]
             if type == 0x8000:
-                s = os.stat(name)
-                size = s[6]
                 print(" - {:8d} \t {}".format(size, name))
             else:
-                size = 0
                 print(" D {:8d} \t {}".format(size, name))
 
 def ip():
