@@ -8,7 +8,7 @@ cs = Pin(16, Pin.OUT)   # D0
 # D5 GPIO14 SCK
 # D6 GPIO12 MISO
 # D7 GPIO13 MOSI
-spi = SPI(1, baudrate=1000000, polarity=1, phase=1)
+spi = SPI(1, baudrate=1000000, polarity=0, phase=0)
 
 kx = kx022.KX022(spi, cs)
 

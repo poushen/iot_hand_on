@@ -9,7 +9,7 @@ cs = Pin(16, Pin.OUT)   # D0
 # D5 GPIO14 SCK
 # D6 GPIO12 MISO
 # D7 GPIO13 MOSI
-spi = SPI(1, baudrate=1000000, polarity=1, phase=1)
+spi = SPI(1, baudrate=1000000, polarity=0, phase=0)
 
 kx = kx022.KX022(spi, cs)
 
@@ -36,8 +36,8 @@ while True:
     r = math.atan2(x, y)
     d = r * 180 / 3.14159
     print('x={:.2f}, \t\t y={:.2f}, \t\t z={:.2f}, \t\t d={:.1f}'.format(x,y,z, d))
-    
+
     if d >= 0:
         s.rotate(int(d))
-        
+
     time.sleep_ms(50)
